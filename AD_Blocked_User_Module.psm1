@@ -2,7 +2,6 @@ function Get-LockedOutUser {
     Get-ADUser -Filter {LockedOut -eq $true} -Properties LockedOut | 
     Select-Object Name, SamAccountName, LockedOut
 }
-
 function Monitor-ADLockouts {
     while ($true) {
         $lockedUsers = Get-LockedOutUser
@@ -14,4 +13,5 @@ function Monitor-ADLockouts {
         Start-Sleep -Seconds 60
     }
 }
+
 
