@@ -13,7 +13,7 @@ function Send-LockoutAlert {
     Send-MailMessage -To $EmailAddress -From "alert@yourdomain.com" -Subject $subject -Body $body -SmtpServer "smtp.yourdomain.com"
 }
 
-function Log-LockoutEvent {
+function Write-LockoutEvent {
     param (
         [string]$UserName
     )
